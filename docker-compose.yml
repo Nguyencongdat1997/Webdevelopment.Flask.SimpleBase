@@ -1,0 +1,15 @@
+version: '2'
+services:
+    app:
+        build: .
+        environment:
+            - FLASK_ENV=development           
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/datgatto:Z
+        networks:
+            - net1            
+networks:
+    net1:
+        driver: bridge          
